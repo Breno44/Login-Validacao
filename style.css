@@ -1,0 +1,123 @@
+:root {
+    --input-linear: linear-gradient(120deg, #E75590, #00C2CB);
+    --input-error: red;
+    --input-success: green;
+    --button-disabled: #acacac;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.login {
+    height: 100vh;
+    background: var(--input-linear);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__container {
+    min-height: 400px;
+    width: 300px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 32px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login__title {
+    margin-bottom: 32px;
+    color: #303030;
+}
+
+.login__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__input {
+    height: 48px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 8px;
+    border: unset;
+    outline: none;
+}
+
+.login__input-border {
+    height: 1px;
+    width: 100%;
+    margin-bottom: 16px;
+    background-color: #cfcfcf;
+    transition: 0.3s ease-in-out;
+}
+
+.login__input-border::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 0;
+    margin-bottom: 16px;
+    background: var(--input-linear);
+    transition: 0.3s ease-in-out;
+}
+
+.login__input:focus + .login__input-border::after {
+    width: 100%;
+}
+
+.login__input-border.error {
+    background: var(--input-error);
+}
+
+.login__input-border.error::after {
+    background: var(--input-error);
+}
+
+.login__submit {
+    height: 48px;
+    width: 100%;
+    outline: none;
+    background: var(--input-linear);
+    background-size: 200%;
+    margin-bottom: 32px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: unset;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.login__submit:disabled{
+    color: var(--button-disabled);
+    cursor: not-allowed;
+}
+
+.login__submit:hover {
+    background-position: right;
+}
+
+.login__submit.error{
+    background: var(--input-error);
+}
+
+.login__submit.success{
+    background: var(--input-success);
+}
+
+.login__reset {
+    font-size: 12px;
+    color: #929292;
+    text-decoration: none;
+}
